@@ -1,0 +1,33 @@
+{
+  "name": "FitUP Automation - Cantiere Terminato",
+  "description": "Automazione per spostamento schede tra workspace alla chiusura dei cantieri.",
+  "category": "automation",
+  "support_email": "luca.visentin@fitup.it",
+  "app_version": {
+    "version": "1.0.0",
+    "launchers": [],
+    "features": [
+      {
+        "name": "Cantiere Terminato Webhook",
+        "type": "webhook",
+        "subscribers": [
+          {
+            "url": "https://api.vercel.com/v1/integrations/deploy/prj_slWY4q4xT0lmTG5zxi4AOg5seyob/6WHqPPD4nO",
+            "method": "post",
+            "event": "change_column_value",
+            "conditions": {
+              "columnId": "stato_cantiere"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": [
+    "boards:read",
+    "boards:write",
+    "items:read",
+    "items:write",
+    "workspaces:write"
+  ]
+}
